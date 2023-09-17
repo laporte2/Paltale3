@@ -1,7 +1,7 @@
 url="$1"
 
 # Use wget to follow redirects and retrieve the headers
-headers=$(wget --max-redirect 0 --spider -S "$url" 2>&1)
+headers=$(wget --no-check-certificate --max-redirect 0 --spider -S "$url" 2>&1)
 
 # Extract the Location header
 location_header=$(echo "$headers" | grep -i "Location:")
